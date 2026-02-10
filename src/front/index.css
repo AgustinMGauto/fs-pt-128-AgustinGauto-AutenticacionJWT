@@ -1,0 +1,24 @@
+.card{
+    height: 250px;
+    width: 400px;
+}
+
+.input-group{
+    width: 320px;
+}
+
+body{
+    background-image: url(https://i.redd.it/47iuyq6dnks51.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.invi{
+    background-color: rgba(255, 255, 255, 0.6) ;
+}
+
+.btn-unsubmit{
+    height: 35px;
+}
