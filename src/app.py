@@ -35,7 +35,7 @@ db.init_app(app)
 
 app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")  # Change this!
 jwt = JWTManager(app)
-app.config['JWT_REFRESH_TOKEN_EXPIRES'] = timedelta(hours=5)
+app.config['JWT_REFRESH_TOKEN_EXPIRES'] = timedelta(hours=3)
 
 
 # add the admin
