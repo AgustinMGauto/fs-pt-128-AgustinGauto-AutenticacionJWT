@@ -22,3 +22,14 @@ body{
 .btn-unsubmit{
     height: 35px;
 }
+
+.bienvenida{
+    background-color: rgba(255, 255, 255, 0.3) ;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.color-boton{
+    color: black;
+}

@@ -24,11 +24,11 @@ export const login = async (user, navigate) => {
             "Content-type": "application/json"
         }
     })
-    const data = await response.json()
     if(!response.ok){
         alert(data.error);
         return
     }
+    const data = await response.json()
     localStorage.setItem("token", data.token)
     navigate("/profile")
 }
