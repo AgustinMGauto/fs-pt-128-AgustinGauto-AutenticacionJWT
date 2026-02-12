@@ -7,7 +7,7 @@ export const Login = () => {
 
     useEffect(() => {
     }, [])
-
+    const [error, setError] = useState("");
     const navigate = useNavigate()
     const [user, setUser] = useState({
         email: "",
@@ -22,6 +22,12 @@ export const Login = () => {
 
     const unSubmit = async (e) => {
        e.preventDefault();
+       setError("");
+       
+		if (!user.email.trim() || !user.password.trim()) {
+			setError("Todos los campos son obligatorios");
+			return
+		}
         login(user, navigate);
     }
 
@@ -54,9 +60,18 @@ export const Login = () => {
                                     onChange={changeInput}
                                 />
                             </div>
-                            <div className="d-flex justify-content-between mt-2">
-                                <p className="text-center mt-3" >No tienes cuenta? <a href="/Home">Crea una cuenta</a></p>
+                            <div>
+                            <div className="d-flex justify-content-between">
+                                <p className="text-center mt-3" >No tienes cuenta? <a href="/">Crea una cuenta</a></p>
                                 <button type="submit" className="btn btn-outline-light btn-unsubmit mt-2">Ingresar</button>
+                            </div>
+                            <div className="">
+									{error && (
+										<div className="alert alert-danger py-2" role="alert">
+											{error}
+										</div>
+									)}
+								</div>
                             </div>
                         </div>
                     </form>

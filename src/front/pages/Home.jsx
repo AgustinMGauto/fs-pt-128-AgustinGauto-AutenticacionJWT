@@ -11,7 +11,7 @@ export const Home = () => {
 	useEffect(() => {
 	}, [])
 
-
+	const [error, setError] = useState("");
 	const navigate = useNavigate()
 	const [user, setUser] = useState({
 		email: "",
@@ -26,8 +26,9 @@ export const Home = () => {
 
 	const unSubmit = async (e) => {
 		e.preventDefault()
-		if (!user.email || !user.password) {
-			alert("Todos los cmapos son obligatorios")
+		setError("");
+		if (!user.email.trim() || !user.password.trim()) {
+			setError("Todos los campos son obligatorios");
 			return
 		}
 		await register(user, navigate)
@@ -63,9 +64,18 @@ export const Home = () => {
 									onChange={changeInput}
 								/>
 							</div>
-							<div className="d-flex justify-content-between mt-2">
-								<p className="text-center mt-3" >Ya tienes cuenta? <a href="/Login">Login</a></p>
-								<button type="submit" className="btn btn-outline-light btn-unsubmit mt-2">Crear cuenta</button>
+							<div>
+								<div className="d-flex justify-content-between mt-2">
+									<p className="text-center mt-3" >Ya tienes cuenta? <a href="/Login">Login</a></p>
+									<button type="submit" className="btn btn-outline-light btn-unsubmit mt-2">Crear cuenta</button>
+								</div>
+								<div className="mt-3">
+									{error && (
+										<div className="alert alert-danger py-2" role="alert">
+											{error}
+										</div>
+									)}
+								</div>
 							</div>
 						</div>
 					</form>

@@ -20,7 +20,7 @@ export const Profile = () => {
                     height:"100px",
                     }}>
                     <h3>Muchas gracias por jugar !</h3>
-                    <h3>Si ya te vas no olvides <a href="/" className="color-boton">Cerrar session</a></h3>
+                    <h3>Si ya te vas, no olvides <a href="/" className="color-boton">Cerrar session</a></h3>
                 </div>
                 </div>
             </div>
